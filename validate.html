@@ -1,85 +1,33 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $city = $_POST['city'];
-    $pincode = $_POST['pincode'];
-    $phone = $_POST['phone'];
-    $email = $_POST['email'];
-    
-    $errors = [];
-
-    // Validate name
-    if (empty($name)) {
-        $errors[] = "Name is a mandatory field.";
-    }
-
-    // Validate city
-    if (empty($city)) {
-        $errors[] = "City is a mandatory field.";
-    }
-
-    // Validate pin code
-    if (!preg_match("/^\d{6}$/", $pincode)) {
-        $errors[] = "Pin code must be 6 digits.";
-    }
-
-    // Validate phone number
-    if (!preg_match("/^\d{10}$/", $phone)) {
-        $errors[] = "Phone number must be 10 digits.";
-    }
-
-    // Validate email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Invalid email address.";
-    }
-
-    // Display errors or success message
-    if (!empty($errors)) {
-        foreach ($errors as $error) {
-            echo "<p style='color:red;'>$error</p>";
-        }
-    } else {
-        echo "<p style='color:green;'>Form submitted successfully!</p>";
-        echo "<p>Name: $name</p>";
-        echo "<p>City: $city</p>";
-        echo "<p>Pin Code: $pincode</p>";
-        echo "<p>Phone Number: $phone</p>";
-        echo "<p>Email Address: $email</p>";
-    }
-    if ($errors)
-	{
-        echo"<p style='color: green;'> Form submitted successfully!</p>";  
-    }
-
-}
-?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Customer Details Form</title>
-   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Customer Details Form</h2>
-        <form method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
-            
-            <label for="city">City:</label>
-            <input type="text" id="city" name="city" required><br><br>
-            
-            <label for="pincode">Pin Code:</label>
-            <input type="text" id="pincode" name="pincode" pattern="\d{6}" required><br><br>
-            
-            <label for="phone">Phone Number:</label>
-            <input type="text" id="phone" name="phone" pattern="\d{10}" required><br><br>
-            
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+    <h2>Form Validation</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            // Get the value entered in the username field
+            var username = document.getElementById("username").value;
+
+            // Check if the username field is empty
+            if (username === "") {
+                // If empty, display an error message
+                alert("Username cannot be empty");
+                // Prevent form submission
+                return false;
+            }
+            // If not empty, allow form submission
+            return true;
+        }
+    </script>
 </body>
 </html>
