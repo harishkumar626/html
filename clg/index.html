@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Website</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our College</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#departments">Departments</a></li>
+                <li><a href="#admissions">Admissions</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to our prestigious college, offering a wide range of courses and opportunities.</p>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Our college is dedicated to providing top-quality education and fostering academic excellence.</p>
+            <figure>
+                <img src="college_building.jpg" alt="College Building">
+                <figcaption>Our beautiful college campus.</figcaption>
+            </figure>
+        </section>
+        <section id="departments">
+            <h2>Departments</h2>
+            <article>
+                <h3>Science</h3>
+                <p>Our Science department offers various courses in Physics, Chemistry, and Biology.</p>
+            </article>
+            <article>
+                <h3>Arts</h3>
+                <p>The Arts department includes courses in Literature, History, and Fine Arts.</p>
+            </article>
+            <article>
+                <h3>Commerce</h3>
+                <p>Our Commerce department provides comprehensive courses in Accounting, Finance, and Marketing.</p>
+            </article>
+        </section>
+        <section id="admissions">
+            <h2>Admissions</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="course">Course:</label>
+                <select id="course" name="course" required>
+                    <option value="science">Science</option>
+                    <option value="arts">Arts</option>
+                    <option value="commerce">Commerce</option>
+                </select><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>For inquiries, please email us at info@ourcollege.com or call 987-654-3210.</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345098077!2d144.96305781531878!3d-37.81627917975154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727e5d8a87ebce!2sUniversity+of+Melbourne!5e0!3m2!1sen!2sin!4v1549644981652" width="600" height="450" style="border:0" allowfullscreen></iframe>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Our College. All rights reserved.</p>
+    </footer>
+</body>
+</html>
