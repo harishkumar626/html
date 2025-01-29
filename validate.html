@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <h2>Form Validation</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            // Get the value entered in the username field
+            var username = document.getElementById("username").value;
+
+            // Check if the username field is empty
+            if (username === "") {
+                // If empty, display an error message
+                alert("Username cannot be empty");
+                // Prevent form submission
+                return false;
+            }
+            // If not empty, allow form submission
+            return true;
+        }
+    </script>
+</body>
+</html>

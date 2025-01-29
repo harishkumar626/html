@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>Java Script - Math Object</title>
+<script language="javascript">
+function dispmeth()
+	{
+		var a;
+		for(i=0;i<document.meth.optmeth.length;i++)
+		{
+			if(document.meth.optmeth[i].checked)
+				a=document.meth.optmeth[i].value;			
+		}
+		switch(a)
+		{
+			case "abs":
+				txtmeth2.value=Math.abs(txtmeth1.value);				
+				break;
+			case "acos" :
+				txtmeth2.value=Math.acos(txtmeth1.value);
+				break;
+			case "asin" :
+				txtmeth2.value=Math.asin(txtmeth1.value);
+				break;
+			case "atan" :
+				txtmeth2.value=Math.atan(txtmeth1.value);
+	  			break;
+			case "ceil" :
+				txtmeth2.value=Math.ceil(txtmeth1.value);
+				break;
+			case "cos" :
+				txtmeth2.value=Math.cos(txtmeth1.value);
+				break;
+			case "exp" :
+				txtmeth2.value=Math.exp(txtmeth1.value);				
+				break;				
+			case "floor" :
+				txtmeth2.value=Math.floor(txtmeth1.value);
+				break;
+			case "log" :
+				txtmeth2.value=Math.log(txtmeth1.value);
+				break;
+			case "max" :
+				alert(Math.max(txtmeth1.value,txtmeth2.value));
+				break;
+			case "min" :
+				alert(Math.min(txtmeth1.value,txtmeth2.value));
+				break;
+			case "pow" :
+				alert(Math.pow(txtmeth1.value,txtmeth2.value));
+				break;
+			case "random" :
+				txtmeth1.value=Math.random();
+				break;				
+			case "round" :
+				txtmeth2.value=Math.round(txtmeth1.value);
+				break;
+			case "sin" :
+				txtmeth2.value=Math.sin(txtmeth1.value);
+				break;
+			case "sqrt" :
+				txtmeth2.value=Math.sqrt(txtmeth1.value);
+				break;
+			case "tan" :
+				txtmeth2.value=Math.tan(txtmeth1.value);
+				break;
+		}
+	}
+	window.defaultStatus="Math Object";
+</script>
+
+
+</head>
+<body>
+<center>
+<h2>Math Object</h2>
+<table>
+<tr bgcolor="blue" >
+<th><font color="white">Methods</font></th>
+</tr>
+<td bgcolor="lightgreen">
+<center>
+<input type="text" id="txtmeth1"><br>
+<input type="text" id="txtmeth2">
+c<enter>
+<form name="meth">
+<table>
+<tr>
+	<td><input type="radio" name="optmeth" value="abs">abs()</td>
+	<td><input type="radio" name="optmeth" value="acos">acos()</td>
+	<td><input type="radio" name="optmeth" value="asin">asin()</td>
+</tr>
+<tr>
+	<td><input type="radio" name="optmeth" value="atan">atan()</td>
+	<td><input type="radio" name="optmeth" value="ceil">ceil()</td>
+	<td><input type="radio" name="optmeth" value="cos">cos()</td>
+</tr>
+<tr>
+	<td><input type="radio" name="optmeth" value="exp">exp()</td>
+	<td><input type="radio" name="optmeth" value="floor">floor()</td>
+	<td><input type="radio" name="optmeth" value="log">log()</td>
+</tr>
+<tr>
+	<td><input type="radio" name="optmeth" value="max">max()</td>
+	<td><input type="radio" name="optmeth" value="min">min()</td>
+	<td><input type="radio" name="optmeth" value="pow">pow()</td>
+</tr>
+<tr>
+	<td><input type="radio" name="optmeth" value="random">random()</td>
+	<td><input type="radio" name="optmeth" value="round">round()</td>
+	<td><input type="radio" name="optmeth" value="sin">sin()</td>
+</tr>
+<tr>
+	<td><input type="radio" name="optmeth" value="sqrt">sqrt()</td>
+	<td><input type="radio" name="optmeth" value="tan">tan()</td>
+</tr>
+<tr>
+	<td colspan="3" align="center"><input type="button" onclick="dispmeth()" value="Submit"></td>
+</tr>
+</table>
+</form>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation with Minimum Characters and Alphabet-only</title>
+</head>
+<body>
+    <h2>Form Validation with Minimum Characters and Alphabet-only</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="username">Username (minimum 5 alphabetical characters):</label>
+        <input type="text" id="username" name="username"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            // Get the value entered in the username field
+            var username = document.getElementById("username").value;
+
+            // Check if the length of username is less than 5 characters
+            if (username.length < 5) {
+                // If less than 5 characters, display an error message
+                alert("Username must be at least 5 characters long");
+                // Prevent form submission
+                return false;
+            }
+
+            // Check if the input contains only alphabetic characters
+            if (!/^[a-zA-Z]+$/.test(username)) {
+                // If contains non-alphabetic characters, display an error message
+                alert("Username should contain only alphabetical characters");
+                // Prevent form submission
+                return false;
+            }
+
+            // If username meets the requirements, allow form submission
+            return true;
+        }
+    </script>
+</body>
+</html>
